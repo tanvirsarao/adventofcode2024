@@ -1,11 +1,11 @@
 import pandas as pd
 day = 1
 
-def selectionSort(arr, method):
+def selectionSort(arr):
     for i in range(len(arr)):
         elem = i
         for j in range(i+1, len(arr)):
-            if (((method == 'a') and (arr[j] < arr[elem])) or (((method == 'd') and (arr[j] > arr[elem])))):
+            if (arr[j] < arr[elem]):
                 elem = j
 
 
@@ -18,8 +18,8 @@ input = pd.read_csv('input.txt', header = None, delim_whitespace=True)
 array1 = input[0]
 array2 = input[1]
 
-selectionSort(array1, 'a')
-selectionSort(array2, 'a')
+selectionSort(array1)
+selectionSort(array2)
 
 df = pd.DataFrame({'Sorted Array1': array1,
                    'Sorted Array2': array2})
